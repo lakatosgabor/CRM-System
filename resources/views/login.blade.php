@@ -19,7 +19,7 @@
    <h3 align="center">Sign CRM System</h3><br />
 
    @if(isset(Auth::user()->email))
-    <script>window.location="/main/successlogin";</script>
+    <script>window.location="/home";</script>
    @endif
 
    @if ($message = Session::get('error'))
@@ -39,7 +39,7 @@
     </div>
    @endif
 
-   <form method="post" action="{{ url('/main/checklogin') }}">
+   <form method="post" action="{{ url('/checklogin') }}">
     {{ csrf_field() }}
     <div class="form-group">
      <label>Enter Email</label>

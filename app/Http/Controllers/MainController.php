@@ -28,7 +28,7 @@ class MainController extends Controller
 
      //make login
      if(Auth::attempt($user_data)){
-      return redirect('main/successlogin');
+      return redirect('home');
      }
      else{
       return back()->with('error', 'Wrong Login Details');
@@ -37,14 +37,14 @@ class MainController extends Controller
     }
 
     //go in success login page
-    function successlogin(){
-     return view('successlogin');
+    function home(){
+     return view('home');
     }
 
     //make loguot
     function logout(){
      Auth::logout();
-     return redirect('main');
+     return redirect('/');
     }
 
 }

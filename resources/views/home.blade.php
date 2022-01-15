@@ -26,28 +26,11 @@
      <br />
     </div>
    @else
-    <script>window.location = "/main";</script>
+    <script>window.location = "/";</script>
    @endif
    
    <br />
   </div>
  </body>
 </html>
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 @endsection

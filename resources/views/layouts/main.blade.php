@@ -8,15 +8,15 @@
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Alkalmazottak</a>
+                <a class="nav-link" aria-current="page" href="employees">Alkalmazottak</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="#">Cégek</a>
+                <a class="nav-link" href="companies">Cégek</a>
                 </li>
             </ul>
             <span class="navbar-text float-end">
                 {{ Auth::user()->name }} <br>
-                <a href="{{ url('/main/logout') }}">Logout</a>
+                <a href="{{ url('/logout') }}">Logout</a>
 
             </span>
         </div>

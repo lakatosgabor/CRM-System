@@ -10,15 +10,15 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/uploadfile', 'UploadfileController@index');
-Route::post('/uploadfile', 'UploadfileController@upload');
-Route::get('/main', 'MainController@index');
 Route::get('/', 'MainController@index');
-Route::post('/main/checklogin', 'MainController@checklogin');
-Route::get('main/successlogin', 'MainController@successlogin');
-Route::get('main/logout', 'MainController@logout');
+Route::post('checklogin', 'MainController@checklogin');
+Route::get('home', 'MainController@home');
+Route::get('logout', 'MainController@logout');
+
+Route::resource('companies','CompanyController');
+Route::resource('companies.create','CompanyController@create');
+
+
+Route::resource('employees','EmployeesController');
+Route::resource('employees.create','EmployeesController@create');
+
