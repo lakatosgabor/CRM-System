@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
  <head>
-  <title>Simple Login System in Laravel</title>
+  <title>MyCRM</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">  <style type="text/css">
    .box{
@@ -16,13 +16,13 @@
  <body>
   <br />
   <div class="container box">
-   <h3 align="center">Simple Login System in Laravel</h3><br />
+   <h3 align="center">Welcome in MyCRM</h3><br />
 
    @if(isset(Auth::user()->email))
     @section('header')
     @endsection
-    <div class="alert alert-danger success-block">
-     <strong></strong>
+    <div class="alert alert-success success-block">
+     <strong>Hi {{Auth::user()->name}}!</strong>
      <br />
     </div>
    @else

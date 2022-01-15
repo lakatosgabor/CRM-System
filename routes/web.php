@@ -15,9 +15,9 @@ Route::post('checklogin', 'MainController@checklogin');
 Route::get('home', 'MainController@home');
 Route::get('logout', 'MainController@logout');
 
+
 Route::resource('companies','CompanyController');
 Route::resource('companies.create','CompanyController@create');
-
 
 Route::resource('employees','EmployeesController');
 Route::resource('employees.create','EmployeesController@create');

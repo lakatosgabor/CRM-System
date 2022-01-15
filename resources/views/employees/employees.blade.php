@@ -5,15 +5,9 @@
 <!DOCTYPE html>
 <html>
  <head>
-  <title>Simple Login System in Laravel</title>
+  <title>MyCRM</title>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">  <style type="text/css">
-   .box{
-    width:600px;
-    margin:0 auto;
-    border:1px solid #ccc;
-   }
-  </style>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
  </head>
  <body>
   <br />
@@ -21,15 +15,16 @@
    @if(isset(Auth::user()->email))
     @section('header')
     @endsection
+    <h1>Employees</h1>
     <table class="table table-bordered table-striped">
-    <a href="{{ route('employees.create') }}"><button>Add new Emoloyee</button></a>
+    <a href="{{ route('employees.create') }}"><button class="btn btn-success">Add new Employee</button></a>
  <tr>
-  <th width="10%">Name</th>
-  <th width="35%">Email</th>
-  <th width="35%">Mobil</th>
-  <th width="30%">Family</th>
-  <th width="30%">Company</th>
-  <th width="30%">Action</th>
+  <th >Name</th>
+  <th >Email</th>
+  <th >Mobil</th>
+  <th >Family</th>
+  <th >Company</th>
+  <th >Action</th>
 
  </tr>
  @foreach($data as $row)
@@ -40,12 +35,16 @@
    <td>{{ $row->family }}</td>
    <td>{{ $row->company }}</td>
    <td>
-    <a href="{{ route('employees.edit', $row->id) }}"><button>Edit</button>
-    <form action="{{ route('employees.destroy', $row->id) }}" method="post">
+    <div>
+    <a class="float-start" href="{{ route('employees.edit', $row->id) }}"><button class="btn btn-warning">Edit</button>
+    </div>
+    <div>
+    <form class="float-end" action="{{ route('employees.destroy', $row->id) }}"  method="post">
         @csrf
         @method('DELETE')
-        <button type="submit">Delete</button>
+        <button type="submit" class="btn btn-danger">Delete</button>
     </form>
+    </div>
    </td>
   </tr>
  @endforeach
